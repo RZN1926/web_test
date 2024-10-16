@@ -17,7 +17,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
-    oredering = ['-date_posted']
+    
 
 
 class PostDetailView(DetailView):
@@ -46,7 +46,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
-    success_url = '/'
+    success_url = '/blog/'
 
     def test_func(self):
         post = self.get_object()
