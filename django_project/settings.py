@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'crispy_forms',
-    'crispy_bootstrap4'
+    'crispy_bootstrap4',
+    'event_manager'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,6 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +71,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
@@ -85,7 +86,10 @@ DATABASES = {
         'USER': 'user',
         'PASSWORD': 'VgU0i0DZYoUONQoRaJSxmXOhdqrEwWu0',
         'HOST': 'dpg-cs7nc4bv2p9s73f622h0-a.singapore-postgres.render.com',
-        'PORT': '5432'
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
@@ -125,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

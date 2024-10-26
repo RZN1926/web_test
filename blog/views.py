@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from .models import Post
 from django .views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-
+from event_manager.models import Event
 
 
     
@@ -74,3 +74,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About '})
+
+
+def post_list(request):
+    posts = Post.objects.all()
+    events = Event.objects.all() 
+    return render(request, 'blog/post_list.html', {'posts': posts, 'events': events})

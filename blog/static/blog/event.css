@@ -1,0 +1,40 @@
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.event-card {
+    width: 300px;
+    background-color: #333; 
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #ffa500; 
+}
+
+.event-header p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.event-content p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
