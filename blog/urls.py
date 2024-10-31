@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView
-from .import views
+from .views import *
+from . import views
+
 
 
 urlpatterns = [
@@ -12,5 +13,4 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about,name='blog-about'),
-    
 ]

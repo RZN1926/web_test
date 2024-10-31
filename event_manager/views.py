@@ -1,8 +1,7 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import *
 from .models import Event
 from django.core.paginator import Paginator
 from django.shortcuts import render
-# Create your views here.
 
 
 class EventListView(ListView):
@@ -10,6 +9,7 @@ class EventListView(ListView):
     template_name = 'event_manager/event_list.html'
     context_object_name = 'events'
     paginate_by = 3
+
 
 class EventDetailView(DetailView):
     model = Event
@@ -22,7 +22,6 @@ def event_list(request):
     paginator = Paginator(events, 3)  
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-
     context = {
         'events': page_obj.object_list,
         'page_obj': page_obj,
